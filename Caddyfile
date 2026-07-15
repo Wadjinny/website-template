@@ -1,5 +1,5 @@
 website-template.w-ilyas.site {
-	root * /home/ubuntu/thinkering/website-template/frontend/dist
+	root * /home/ubuntu/thinkering/website-template
 	encode gzip
 
 	handle_path /api/* {
