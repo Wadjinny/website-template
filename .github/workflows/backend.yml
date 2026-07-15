@@ -1,0 +1,21 @@
+name: Backend CI/CD
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    uses: Wadjinny/workflows/.github/workflows/docker-build-push.yml@main
+    with:
+      context: ./backend
+      image_name: wadjinny/website-template/backend
+
+  deploy:
+    needs: build
+    uses: Wadjinny/workflows/.github/workflows/docker-deploy-ssh.yml@main
+    with:
+      image_tag: ${{ needs.build.outputs.tag }}
+      remote_dir: /home/ubuntu/thinkering/website-template
+    secrets: inherit
