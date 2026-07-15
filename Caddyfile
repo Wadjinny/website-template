@@ -1,0 +1,11 @@
+website-template.w-ilyas.site {
+	root * /home/ubuntu/thinkering/website-template/frontend/dist
+	encode gzip
+
+	handle_path /api/* {
+		reverse_proxy localhost:1234
+	}
+
+	try_files {path} /index.html
+	file_server
+}
