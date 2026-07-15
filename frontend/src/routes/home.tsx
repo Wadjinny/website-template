@@ -32,7 +32,7 @@ function Home() {
           to="/features"
           className="rounded-lg border border-slate-200 px-6 py-3 font-medium text-slate-700 transition hover:bg-slate-100 dark:border-white/15 dark:text-slate-200 dark:hover:bg-white/5"
         >
-          Explore 404 page 😂
+          Explore 404 page 🙌
         </Link>
       </div>
     </section>
